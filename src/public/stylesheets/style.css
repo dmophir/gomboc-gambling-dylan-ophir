@@ -1,0 +1,96 @@
+
+body {
+  padding: 100px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body .logo_container {
+  margin-bottom: 2em;
+}
+
+body .rng_container {
+  margin-bottom: 2em;
+}
+
+body .users-column {
+  display: inline-block;
+  margin-right: 2em;
+  vertical-align: top;
+}
+
+body .users-column .column-header {
+  padding-bottom: 5px;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+body .users-column .roll-display-ele {
+  padding-bottom: 5px;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+
+body .users-column .account-display-ele {
+  padding-bottom: 5px;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+
+/** Add User Column **/
+
+body .add-user-col input {
+  margin-bottom: 10px;
+}
+
+body .add-user-col #id_place-wager-btn {
+  margin-top: 2px;
+  margin-bottom: 10px;
+  background-color: #0a8f70;
+}
+
+
+/** Users Display Column **/
+
+.email-edit {
+  padding-bottom: 8px;
+}
+
+body .users-column .user-display-ele {
+  padding-bottom: 10px;
+}
+
+body .users-column .user-display-ele button {
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+body .users-column .user-display-ele .edit-view {
+  display: none;
+}
+
+
+
+
+
+/* body .users-column .add-user-col input #id_prediction-input input[type="checkbox"] {
+  display: none;
+}
+
+body .users-column .add-user-col input #id_prediction-input span {
+  display: inline-block;
+  width: 60px;
+  font-size: 1.2em;
+  padding: 10px 0;
+  text-align: center;
+  margin-right: 20px;
+  border: 1px #0a8f70;
+  border-radius: 5px;
+  color: #0a8f70
+}
+
+body .users-column .add-user-col input #id_prediction-input input[type="checkbox"]:checked + span {
+  background-color: #0a8f70;
+  color: black;
+} */

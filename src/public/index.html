@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Gomboc Gambling Casino</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />
+    <link rel="icon" type="image/x-icon" href="images/gomboc_favicon.png" />
+
+    <!-- Handlebars -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <!-- Body -->
+  <body style="background-color: #e4e9ed;">
+    
+    <!-- Add Logo -->
+    <div class="logo_container">
+      <img class="logo" src="images/gomboc_logo_white.svg">
+    </div>
+
+    <!-- Add RNG Viewer -->
+    <div class="rng_container">
+      <div id="rng-anchor"></div>
+      <script
+        id="rng-template"
+        type="text/x-handlebars-template"
+      >
+        {{#with diceroll}}
+          <div class="roll-display-ele">
+            <div class="normal-view">
+              <div>Roll: ${{roll}}</div>
+            </div>
+          </div>
+        {{/with}}
+      </script>
+    </div>
+
+    <!-- Place Wagers -->
+    <div class="users-column add-user-col">
+      <div class="column-header">
+        Place Wager:
+      </div>
+      <div id="account-balance-anchor"></div>
+      <script
+        id="account-balance-template"
+        type="text/x-handlebars-template"
+      >
+        {{#each accounts}}
+          <div class="account-display-ele">
+            <div class="normal-view">
+              <div>Remaining Balance: ${{balance}}</div>
+            </div>
+          </div>
+        {{/each}}
+      </script>
+      <div>
+        <input
+          id="wager-input"
+          type="number"
+          class="form-control"
+          placeholder="0"
+        />
+      </div>
+      <div>
+        <select id="prediction-input">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <div>
+        <button
+          id="place-wager-btn"
+          class="btn btn-success"
+        >
+          Bet
+        </button>
+        <button
+          id="withdraw-btn"
+          class="btn btn-success"
+        >
+          Withdraw
+        </button>
+      </div>
+    </div>
+
+    <!-- Display History -->
+    <div class="users-column">
+      <div class="column-header">
+        Previous Moves:
+      </div>
+
+      <div id="all-users-anchor"></div>
+      <script
+        id="all-users-template"
+        type="text/x-handlebars-template"
+      >
+        {{#each history}}
+          <div class="user-display-ele">
+            <div class="normal-view">
+              <div><b>Game:</b> {{game_id}}</div>
+              <div><b>Wager:</b> {{wager}}</div>
+              <div><b>Prediction:</b> {{prediction}}</div>
+              <div><b>Outcome:</b> {{outcome}}</div>
+              <div><b>Result:</b> {{successFormatted}}</div>
+              <!-- <button
+                type="button"
+                class="btn btn-primary edit-user-btn"
+                data-user-id="{{id}}"
+              >
+                Edit
+              </button>
+              <button
+                class="btn btn-danger delete-user-btn"
+                data-user-id="{{id}}"
+              >
+                Delete
+              </button> -->
+            </div>
+
+            <div class="edit-view">
+              <div>
+                Name:&nbsp;
+                <input
+                  type="text"
+                  class="form-control name-edit-input"
+                  value="{{name}}"
+                />
+              </div>
+              <div class="email-edit">
+                Email:&nbsp;
+                <input
+                  type="email"
+                  class="form-control email-edit-input"
+                  value="{{email}}"
+                />
+              </div>
+              <button
+                class="btn btn-primary submit-edit-btn"
+                data-user-id="{{id}}"
+                data-user-created="{{created}}"
+              >
+                Submit
+              </button>
+              <button
+                class="btn btn-secondary cancel-edit-btn"
+                data-user-id="{{id}}"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        {{/each}}
+      </script>
+    </div>
+  </body>
+
+  <script src="scripts/http.js"></script>
+  <script src="scripts/history.js"></script>
+</html>

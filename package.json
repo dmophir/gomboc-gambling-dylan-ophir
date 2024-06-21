@@ -1,0 +1,32 @@
+{
+  "name": "gomboc-gambling",
+  "version": "1.0.0",
+  "description": "Full stack three-layer application where users can bet on the outcome of dice rolls",
+  "main": "./dist/index",
+  "scripts": {
+    "postinstall": "tsc",
+    "build": "tsc",
+    "clean": "rm -rf ./dist",
+    "start": "node dist/index",
+    "dev": "nodemon ./src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmophir/gomboc-gambling-dylan-ophir.git"
+  },
+  "author": "Dylan Ophir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmophir/gomboc-gambling-dylan-ophir/issues"
+  },
+  "homepage": "https://github.com/dmophir/gomboc-gambling-dylan-ophir#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "@types/node": "^20.14.6",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}
